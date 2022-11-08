@@ -1,26 +1,101 @@
-
 .Headers {
-    width: 100%;
-    height: 50px;
-    background-color: rgba(0, 0, 0, .5);
-    display: flex;
-    justify-content: left;
-    position: sticky;
-    top: 0;
-  }
-  
-  .Headers a {
-    margin-top: 10px;
-    border: 1px solid white;
-    border-radius: 10px;
-  }
-  
-  .Headers a:hover {
-    /* background-color: #FC00FF; */
-    color: wheat;
-  }
+  width: 100%;
+  height: 50px;
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: left;
+  position: sticky;
+  top: 0;
+}
 
-  .Body{
-    height: 100vh;
-    background-color: black;
+.Headers a {
+  margin-top: 10px;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: aliceblue;
+}
+
+.Headers a:hover {
+  /* background-color: #FC00FF; */
+  color: wheat;
+}
+
+.Body {
+  height: 100vh;
+  /* background-color: black; */
+  background: rgb(2, 178, 197);
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+.Titulo {
+  text-align: center;
+}
+
+.inputcontainer, .dropcontainer {
+  width: 40%;
+  height: auto;
+  text-align: center; 
+  justify-content: center;
+  align-items: center;
+  position:relative;
+  left: 30%;
+  color: aliceblue;
+  /* border: 1px solid red; */
+} 
+.inputcontainer input, .dropcontainer input{
+  width: 40%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  border: 0;
+  border-bottom: 1px solid white;
+  background-color: rgba(255, 255, 255, .1);
+  /* color: aliceblue; */
+}
+
+.Agregar{
+  width: 100px;
+  height: 40px;
+  margin: 20px;
+  background-color: transparent;
+  border: 0;
+  border: 3px solid aqua;
+  border-radius: 5px;
+}
+
+.Eliminar{
+  width: 100px;
+  height: 40px;
+  margin: 20px;
+  background-color: transparent;
+  border: 0;
+  border: 3px solid red;
+  border-radius: 5px;
+}
+
+.Agregar:hover{
+  color: aqua;
+}
+.Eliminar:hover{
+  color: red;
+}
+
+@media (max-width: 700px) {
+  .inputcontainer, .dropcontainer{
+    width: 100%;
+    position: static;
   }
+}
+
+@media (prefers-color-scheme: dark) {
+  
+  .Body {
+    color: aliceblue;
+    background: black;
+    /* background: linear-gradient(90deg, rgba(0,148,163,1) 0%, rgba(0,0,0,1) 100%); */
+    
+  }
+}

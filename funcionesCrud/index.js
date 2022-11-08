@@ -57,7 +57,7 @@ export async function FindReg(can, pin, collection) {
 
     if (result[0] == undefined) {
         // console.log("!!!!!!! DATO NO ENCONTRADO !!!!!!!")
-        
+
     } else {
         // console.log("!!!!!!! DATO ENCONTRADO !!!!!!!")
     }
@@ -93,11 +93,26 @@ export function horaActual() {
 }
 
 export async function FindDispZona(zona, collection) {
-    let query = { "zona": {$in:[zona]}}
+    let query = { "zona": { $in: [zona] } }
     const db = await MongoClient.connect(url);
     const dbo = db.db("dana");
     const MyCollection = dbo.collection(collection);
     const result = await MyCollection.find(query).toArray();
     db.close();
     return result
+}
+
+
+export async function DropData(body, collection) {
+    if (body.can == "" || body.pin == "") {
+        return false
+    } else {
+        let query = { "can": body.can, "pin": body.pin }
+        const db = await MongoClient.connect(url);
+        const dbo = db.db("dana");
+        const MyCollection = dbo.collection(collection);
+        const result = await MyCollection.deleteOne(query).toArray();
+        db.close();
+        return result
+    }
 }

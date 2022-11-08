@@ -11,7 +11,7 @@ const DataCochera = Data.Cochera
 const ProductItem = () => {
     const { query: { zonaMapa } } = useRouter()
     const [dispositivos, setDispositivos] = React.useState([])
-
+    // console.log(zonaMapa);
     React.useEffect(() => {
         obtenerDatos()
     })
@@ -23,8 +23,7 @@ const ProductItem = () => {
         } catch (error) {
             console.log("NO FUNCIONO");
         }
-    }
-    
+    }    
 
     return (
         <div className={styles.Zona}>

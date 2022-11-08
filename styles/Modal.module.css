@@ -16,9 +16,8 @@
 
 .Modal {
     /* background: #d9d6d3; */
-    
-    width: 40%;
-    height: 50%;
+    width: auto;
+    height: auto;
     border-radius: 15px;
     padding: 20px;
     z-index: 10000;
@@ -26,6 +25,8 @@
     align-items: center;
     background: center;
     background-color: gainsboro;
+    /* background-color:black;
+    color: aliceblue; */
 }
 
 .Header {
@@ -51,7 +52,7 @@
 
 .Body {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     background: center;
@@ -59,22 +60,53 @@
     /* border: 1px solid red; */
 }
 
+.ContainFoco{
+    display: flex;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
 .ImagenContend{
+    width: 100px;
+    height: auto;
     display: flex;
     /* border: 1px solid red; */
-    justify-content: center;
+    /* justify-content: center;
     align-items: center;
+    text-align: center; */
+    border-radius: 50%;
+    position: relative;
+    left: 25%;
 }
 
 .ImagenContend button{
     background-color: transparent;
     border: 0;
+    /* justify-content: center;
+    align-items: center;
+    text-align: center; */
 }
 .ImagenContend img {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
     width: 90px;
     /* border: 1px solid red; */
 }
 
+.Data{
+    /* display: flex; */
+    text-align: center;
+    font-size: 12px;
+}
+.Data h4{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
 
 .BotonesContend{
     display: flex;
@@ -82,20 +114,101 @@
 .BotonesContend button{
     width: 70px;
     height: 30px;
-    background-color: beige;
-    color: black;
+    /* background-color: transparent; */
+    /* color: black; */
     margin: 20px;
+    /* border: 0    ; */
+    /* color: aliceblue; */
+    
+}
+.Encender{
+    border: 0;
+    border-bottom: 3px solid black;  
+    border-radius: 15%; 
+    color: aliceblue;
+    background-color: lightseagreen;
+    /* font-size: 18px; */
+    /* background-color: rgb(7, 218, 242) ; */
+}
+.Apagar{
+    border: 0;
+    border-bottom: 3px solid black;
+    border-radius: 15%;
+    background-color: red;
+    color: aliceblue;
+
+}
+
+.BotonRGB button{
+    width: 80px;
+    height: 30px;
+    /* height: 25%; */
+    border: 0;
+    border-bottom: 1px solid black;
+    border-radius: 10%;
+    background: rgb(66,81,242);
+background: linear-gradient(83deg, rgba(66,81,242,1) 0%, rgba(111,190,228,1) 100%);
+    color: aliceblue;
+}
+
+.BotonesContend button:hover, .BotonRGB button:hover,.ImagenContend:hover, .Header button:hover {
+    transform: scale(1.2);
+}
+
+/* 
+    **************************************************************************************************************************
+            BOTON RGB
+    **************************************************************************************************************************
+*/
+
+.ContainRGB{
+    width: 75%;
+    height: auto;
+    text-align: center;
+    /* border: 1px solid red; */
+    margin-left: 35px;
+}
+
+.RGBcontainer{
+    display:grid;
+    justify-content: center;
+}
+.RGBcontainer input{
+    width: 80px;
+    text-align: center;
+    border: 0;
+    background-color: transparent;
+    margin: 5px;
+    border-bottom: 2px solid black;
+    color: black;
+}
+
+.RGBcontainer button{
+    margin: 10px;
+}
+
+.RgbCubo{
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+    border-radius: 50%;
+    /* justify-content: center;
+    align-items: center;
+    text-align: center; */
+    position: relative;
+    left: 10%;
 }
 
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 450px) {
     .Modal{
         margin-top: 0;
-        width: 60%;
-        height: 70%;
+        width: auto;
+        height: auto;
     }
     .Body{
         margin-top: 0;
+        display: block;
     }
     
   }

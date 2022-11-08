@@ -16,6 +16,8 @@ export default function Home() {
           <a href="">Dana 4.0</a>
         </h1>
 
+        <img src={("/home.png").toLowerCase()} />
+
         <section className={styles.zonas}>
 
           <Link href={"./Zonas"} className={styles.Link}>Zonas</Link>

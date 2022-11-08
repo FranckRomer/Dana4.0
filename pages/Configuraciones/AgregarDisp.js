@@ -14,11 +14,27 @@ const Configuraciones = () => {
         top: "",
         left: "",
     })
+
+    const [dropData, setDropData] = React.useState({
+        can: "",
+        pin: ""
+    })
+
     const CrearLampara = async (e) => {
         e.preventDefault();
         console.log(newData);
         try {
             const res = await axios.put("/api/dana/infoDisp/changeDisp", newData);
+            console.log(res);
+        } catch (error) {
+            console.log("NO SE PUDO ENVIAR");
+        }
+    }
+    const EliminarLampara = async (e) =>{
+        e.preventDefault();
+        console.log(dropData);
+        try {
+            const res = await axios.put("/api/dana/infoDisp/dropDisp", dropData);
             console.log(res);
         } catch (error) {
             console.log("NO SE PUDO ENVIAR");
@@ -33,7 +49,7 @@ const Configuraciones = () => {
 
             <section className={styles.AddDisp}>
 
-                <h1>Modificar Lámpara</h1>
+                <h1 className={styles.Titulo}>Modificar Dispositivo</h1>
                 <form onSubmit={CrearLampara} className={styles.inputcontainer}>
                     <input
                         type="" name="CAN" placeholder='CAN'
@@ -111,10 +127,39 @@ const Configuraciones = () => {
                             })
                         }>
                     </input>
-
-                    <button type="" >AGREGAR</button>
+                    <br />
+                    <button type="" className={styles.Agregar} >AGREGAR</button>
                 </form>
+
             </section>
+            {/* /////////////////////////////////////////////// */}
+
+            <section className={styles.DropData}>
+                <h1 className={styles.Titulo}>Eliminar Dispositivo</h1>
+                <form onSubmit={EliminarLampara} className={styles.dropcontainer}>
+                    <input
+                        type="" name="CAN" placeholder='CAN'
+                        onChange={(e) =>
+                            setDropData({
+                                ...dropData,
+                                can: e.target.value,
+                            })
+                        }>
+                    </input>
+                    <input
+                        type="" name="PIN" placeholder='PIN'
+                        onChange={(e) =>
+                            setDropData({
+                                ...dropData,
+                                pin: e.target.value,
+                            })
+                        }>
+                    </input>
+                    <br />
+                    <button type="" className={styles.Eliminar} >ELIMINAR</button>
+                </form>
+            </section >
+
 
         </div>
     )
