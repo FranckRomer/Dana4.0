@@ -3,8 +3,8 @@ import React from 'react'
 import Modal from '../../Modal';
 import stylesModal from "../../../styles/Modal.module.css"
 import axios from "axios";
-import { SketchPicker } from 'react-color';
-import { render } from 'react-dom';
+// import { SketchPicker } from 'react-color';
+// import { render } from 'react-dom';
 import Link from 'next/link'
 // import { ModalComponent } from '../Modal';
 
@@ -12,7 +12,7 @@ function BotonJoya(props) {
     const [showModal, setShowModal] = React.useState(false)
     const [colorHexCode, setColorHexCode] = React.useState(false);
     const [rgbData, setrRgbData] = React.useState({
-        RGB: "",        
+        RGB: "",
     })
 
     /*
@@ -81,7 +81,11 @@ function BotonJoya(props) {
     }
 
     const styleRgbNewColor = {
-        background: "#" + rgbData.RGB ,
+        background: "#" + rgbData.RGB,
+    }
+    const styleLink = {
+        width: "40px",
+        height: "40px"
     }
 
     const ObtenerValuesRGB = async (e) => {
@@ -96,8 +100,8 @@ function BotonJoya(props) {
                 props.Data.can === "FFF" ?
                     <div>
                         <div className={styles.Cubo} style={stylePosicion} >
-                            <button type="">
-                                <Link href={"/Zonas/ZonaMapa/" + props.Data.tipo} className={styles.LinkHome}>
+                            <button type="" >
+                                <Link href={"/Zonas/ZonaMapa/" + props.Data.tipo} className={styles.LinkZonaSec}>
                                     <img src={'/images/disp/' + props.Data.tipo + '.png'} />
                                 </Link>
                             </button>
@@ -149,7 +153,7 @@ function BotonJoya(props) {
                 {
                     colorHexCode ?
                         <div className={stylesModal.ContainRGB}>
-                            <h3>New Color:</h3>
+                            <h3>New Color</h3>
                             <div className={stylesModal.RgbCubo} style={styleRgbNewColor} >
 
                             </div>
@@ -163,24 +167,7 @@ function BotonJoya(props) {
                                         })
                                     }>
                                 </input>
-                                {/* <input
-                                    type="" name="Value Green" placeholder='Value Green'
-                                    onChange={(e) =>
-                                        setrRgbData({
-                                            ...rgbData,
-                                            G: e.target.value,
-                                        })
-                                    }>
-                                </input>
-                                <input
-                                    type="" name="Value Blue" placeholder='Value Blue'
-                                    onChange={(e) =>
-                                        setrRgbData({
-                                            ...rgbData,
-                                            B: e.target.value,
-                                        })
-                                    }>
-                                </input> */}
+                                
                                 <br />
                                 <button type=""  >Cambiar Color</button>
                             </form>

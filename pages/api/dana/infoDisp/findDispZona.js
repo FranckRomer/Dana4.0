@@ -23,7 +23,7 @@ export default async function findDispZona(req, res) {
     // console.log("Llego un mensaje a findDisp: ");
     // console.log(zona);
     if (zona == undefined) {
-        res.status(401).json(false)
+        res.status(200).json(false)
     }
     let result = await FindDispZona(zona, "DISPOSITIVOS")
     result = sortJSON(result, 'pin', 'asc');

@@ -2,6 +2,7 @@ import React from 'react'
 import styles from '../../styles/Configuraciones.module.css'
 import axios from "axios";
 import Link from 'next/link';
+import react from 'react';
 
 const Configuraciones = () => {
     const [newData, setNewData] = React.useState({
@@ -20,6 +21,16 @@ const Configuraciones = () => {
         pin: ""
     })
 
+    const [newZone, setNewZone] = React.useState({
+        zona: "",
+        index: "",
+    })
+
+    const [dropZone, setDropZone] = React.useState({
+        zona: ""
+    })
+
+    // ///////////////////////////////////////////////////////////////
     const CrearLampara = async (e) => {
         e.preventDefault();
         console.log(newData);
@@ -30,16 +41,42 @@ const Configuraciones = () => {
             console.log("NO SE PUDO ENVIAR");
         }
     }
-    const EliminarLampara = async (e) =>{
+    const EliminarLampara = async (e) => {
         e.preventDefault();
         console.log(dropData);
         try {
-            const res = await axios.put("/api/dana/infoDisp/dropDisp", dropData);
+            // const res = await axios.put("/api/dana/infoDisp/dropDisp", dropData);
             console.log(res);
         } catch (error) {
             console.log("NO SE PUDO ENVIAR");
         }
     }
+
+    // ///////////////////////////////////////////////////////////////
+    const AgregarZona = async (e) => {
+        e.preventDefault();
+        console.log(newZone);
+        try {
+            const res = await axios.put("/api/dana/infoDisp/addZone", newZone);
+            console.log(res);
+        } catch (error) {
+            console.log("NO SE PUDO ENVIAR");
+        }
+    }
+    const EliminarZona = async (e) => {
+        e.preventDefault();
+        console.log(dropZone);
+        try {
+            const res = await axios.put("/api/dana/infoDisp/dropZone", dropZone);
+            console.log(res);
+        } catch (error) {
+            console.log("NO SE PUDO ENVIAR");
+        }
+    }
+
+
+
+    // ///////////////////////////////////////////////////////////////
 
     return (
         <div className={styles.Body}>
@@ -160,6 +197,56 @@ const Configuraciones = () => {
                 </form>
             </section >
 
+            {/* /////////////////////////////////////////////// */}
+
+            {/* 
+                ******************************************************************
+                                    ZONAS
+                ******************************************************************
+            */}
+            <section className={styles.DropData}>
+                <h1 className={styles.Titulo}>Agregar Zona</h1>
+                <form onSubmit={AgregarZona} className={styles.inputcontainer}>
+                    <input
+                        type="" name="ZONA" placeholder='ZONA'
+                        onChange={(e) =>
+                            setNewZone({
+                                ...newZone,
+                                zona: e.target.value,
+                            })
+                        }>
+                    </input> 
+                    <input
+                        type="" name="Orden" placeholder='ORDEN'
+                        onChange={(e) =>
+                            setNewZone({
+                                ...newZone,
+                                index: e.target.value,
+                            })
+                        }>
+                    </input>                   
+                    <br />
+                    <button type="" className={styles.Agregar} >Agregar</button>
+                </form>
+            </section>
+            {/* //////////////////////////////////////////////// */}
+
+            <section className={styles.DropData}>
+                <h1 className={styles.Titulo}>Eliminar Zona</h1>
+                <form onSubmit={EliminarZona} className={styles.dropcontainer}>
+                    <input
+                        type="" name="ZONA" placeholder='ZONA'
+                        onChange={(e) =>
+                            setDropZone({
+                                ...dropZone,
+                                zona: e.target.value,
+                            })
+                        }>
+                    </input>                   
+                    <br />
+                    <button type="" className={styles.Eliminar} >Eliminar</button>
+                </form>
+            </section>
 
         </div>
     )

@@ -164,7 +164,7 @@ background: linear-gradient(83deg, rgba(66,81,242,1) 0%, rgba(111,190,228,1) 100
 .ContainRGB{
     width: 75%;
     height: auto;
-    text-align: center;
+    /* text-align: center; */
     /* border: 1px solid red; */
     margin-left: 35px;
 }
@@ -172,10 +172,11 @@ background: linear-gradient(83deg, rgba(66,81,242,1) 0%, rgba(111,190,228,1) 100
 .RGBcontainer{
     display:grid;
     justify-content: center;
+    align-items: center;
 }
 .RGBcontainer input{
     width: 80px;
-    text-align: center;
+    /* text-align: center; */
     border: 0;
     background-color: transparent;
     margin: 5px;
@@ -183,9 +184,26 @@ background: linear-gradient(83deg, rgba(66,81,242,1) 0%, rgba(111,190,228,1) 100
     color: black;
 }
 
-.RGBcontainer button{
-    margin: 10px;
+
+.ContainRGB button{
+    width: 100px;
+    height: 25px;
+    background-color: black;
+    border: 0;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    border-bottom: 3px solid black;
+    /* text-align: center;
+    align-items: center; */
 }
+
+.RGBcontainer button{
+    width: 100px;
+    height: 40px;
+    color: black;
+    background-color: aqua;
+}
+
 
 .RgbCubo{
     width: 80px;

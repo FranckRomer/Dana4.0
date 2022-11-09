@@ -66,7 +66,7 @@ export async function FindReg(can, pin, collection) {
 
 //
 export function horaActual() {
-    let hoy = moment().utcOffset("-5:00");
+    let hoy = moment().utcOffset("-6:00");
     let dia = hoy.date().toString();
     let mes = (hoy.month() + 1).toString();
     let ano = hoy.year().toString();
@@ -103,16 +103,52 @@ export async function FindDispZona(zona, collection) {
 }
 
 
-export async function DropData(body, collection) {
-    if (body.can == "" || body.pin == "") {
+export async function DropData(body, query, proyect , collection) {
+    if (body == "" || query == "" || proyect == "" || collection == "") {
         return false
     } else {
-        let query = { "can": body.can, "pin": body.pin }
+        // let query = { "can": body.can, "pin": body.pin }
         const db = await MongoClient.connect(url);
-        const dbo = db.db("dana");
+        const dbo = db.db( proyect );
         const MyCollection = dbo.collection(collection);
-        const result = await MyCollection.deleteOne(query).toArray();
+        const result = await MyCollection.deleteOne(query);
         db.close();
         return result
     }
 }
+
+export async function UpgrateZone(body, query, proyect, collection) {
+    // console.log(body);
+    if (body == "" || query == "" || proyect == "" || collection == "") {
+        return false
+    } else {
+        // let query = { "zona": body.zona }
+        let newvalues = { $set: body };
+        const db = await MongoClient.connect(url);
+        const dbo = db.db(proyect);
+        const MyCollection = dbo.collection(collection);
+        let result = await MyCollection.updateOne(query, newvalues);
+        if (result.modifiedCount == 0 && result.upsertedCount == 0 && result.matchedCount == 0 ) {        
+            result = await MyCollection.insertOne(body);
+        } else {
+            //   
+        }
+        db.close();
+        return result
+    }
+}
+
+export async function FindZona(body, query, proyect, collection) {
+    if (  proyect == "" || collection == "") {
+        return false
+    } else {
+        let query = { "zona": body.zona }
+        let newvalues = { $set: body };
+        const db = await MongoClient.connect(url);
+        const dbo = db.db(proyect);
+        const MyCollection = dbo.collection(collection);
+        let result = await MyCollection.find().toArray();        
+        db.close();
+        return result
+    }
+} 

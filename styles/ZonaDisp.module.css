@@ -56,7 +56,18 @@
     display: flex;
 }
 
-
+.Cubo2 {
+    width: 18px;
+    height: 18px;
+    /* border-radius: 20%; */
+    z-index: 9990;
+    position: fixed;
+    /* justify-content: left; */
+    align-items: center;
+    /* transition: transform .3s; */
+    border-radius: 50%;
+    display: flex;
+}
 
 .Cubo button {
     height: 100%;
@@ -78,6 +89,17 @@
     justify-content: center;
     text-align: center;
     /* transition: transform .3s; */
+    /* border: 1px solid red; */
+}
+.LinkZonaSec {
+    width: 30px;
+    height: 30px;
+    /* border: 1px solid red; */
+}
+
+.LinkZonaSec img{
+    width: 30px;
+    height: 30px;
     /* border: 1px solid red; */
 }
 
