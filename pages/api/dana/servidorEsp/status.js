@@ -1,4 +1,4 @@
-import {UpdateReg, FindReg, horaActual} from "../../../../funcionesCrud"
+import {UpgrateData, FindData, horaActual} from "../../../../funcionesCrud"
 
 export default function status(req, res) {
     let body = req.body
@@ -7,7 +7,8 @@ export default function status(req, res) {
     console.log(body);
     body.hora = horaActual();
     body.heardBeat = true;
-    UpdateReg(body, "STATUS")
-    res.status(200).json({ name: 'STATUS' })
+    let query = { "ipEsp": body.ipEsp }
+    let response = UpgrateData(body, query, body.proyect, "STATUS")
+    res.status(200).json({ response })
   }
   

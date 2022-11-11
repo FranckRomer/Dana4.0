@@ -184,8 +184,8 @@
     height: 40px;
     background-color: #000b38;
     bottom: -160px;
-    -webkit-animation: animacionCuadrados 10s infinite;
-    animation: animacionCuadrados 10s infinite;
+    -webkit-animation: animacionCuadrados 12s infinite;
+    animation: animacionCuadrados 8s infinite;
     -webkit-transition-timing-function: linear;
     transition-timing-function: linear;
 }

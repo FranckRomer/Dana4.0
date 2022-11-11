@@ -31,7 +31,7 @@ export default async function sendEsp(req, res) {
   const { myTokenName } = req.cookies;
   let proyects;
   if (!myTokenName) {
-    proyects = "joya"
+    proyects = "dana"
   } else{
     const  { proyect } = jwt.verify(myTokenName, "secret");
     proyects = proyect
@@ -42,17 +42,19 @@ export default async function sendEsp(req, res) {
   console.log("---------------------------------")
   console.log("Llego un mensaje a sendEsp32: ");
   console.log(body);
-  let query = { "can": can, "pin": pin }
-
+  let query = { "can": body.can, "pin": body.pin }
+  console.log(proyects);
   if (!body) {
     res.status(200).json({ body: null })
   }
   //
   if (body.rgb != "xxx") {
     // UpdateReg(body, "DISPOSITIVOS")
+    
     UpgrateData(body, query, proyects, "DISPOSITIVOS")
   }
   // buscar REGISTRO
+  
   query = ""
   let result = await FindData( query, proyects, "STATUS")
   // console.log(result)

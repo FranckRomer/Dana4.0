@@ -28,19 +28,20 @@ export default async function findDisp(req, res) {
     let body = req.body
     let can = body.can
     let pin = body.pin
-    console.log("---------------------------------")
-    console.log("Llego un mensaje a findDisp: ");
-    console.log(body);
+    // console.log("---------------------------------")
+    // console.log("Llego un mensaje a findDisp: ");
+    // console.log(body);
     let query = { "can": can, "pin": pin }
-    if (!body.can) {
-        can = 0
-        pin = 0
+    // console.log(body.can);
+    if (body.can == undefined) {
+        // can = 0
+        // pin = 0
         query = ""
     } 
     // let result = await FindReg(can, pin, "DISPOSITIVOS")
     
     // let proyect = "dana"
-    let result = await FindData( query, proyect, "ZONAS")
+    let result = await FindData( query, proyect, "DISPOSITIVOS")
     
     result = sortJSON(result, 'pin', 'asc');
     result = sortJSON(result, 'can', 'asc');
