@@ -8,8 +8,15 @@ export default function Home() {
       <Head>
         <title>Dana4.0</title>
         <meta name="description" content="Dana 4.0" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/littleHouse.png" />
       </Head>
+
+      <header className={styles.Headers}>
+        <Link href={"./"} className={styles.LinkHome}>Home</Link>
+        <Link href={"./login"} className={styles.Link}>Login</Link>
+        <Link href={"./dashboard"} className={styles.Link}>Profile</Link>
+        <Link href={"./login/register"} className={styles.Link}>Register</Link>
+      </header>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
@@ -21,6 +28,7 @@ export default function Home() {
         <section className={styles.zonas}>
 
           <Link href={"./Zonas"} className={styles.Link}>Zonas</Link>
+
 
         </section>
       </main>

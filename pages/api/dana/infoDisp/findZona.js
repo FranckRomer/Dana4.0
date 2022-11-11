@@ -1,4 +1,5 @@
 import { FindZona } from "../../../../funcionesCrud"
+import jwt from "jsonwebtoken";
 
 //
 function sortJSON(data, key, orden) {
@@ -17,6 +18,13 @@ function sortJSON(data, key, orden) {
 }
 
 export default async function FindZonas(req, res) {
+    // cookies
+    const { myTokenName } = req.cookies;
+    if (!myTokenName) {
+        return res.status(401).json({ error: "Not logged in" });
+    }
+    const { username, proyect } = jwt.verify(myTokenName, "secret");
+    // 
     let body = req.body
     let zona
     try {
@@ -28,7 +36,7 @@ export default async function FindZonas(req, res) {
     // console.log("Llego un mensaje a FindZonas: ");
     // console.log(body);
     let query = { "zona": zona }
-    let proyect = "dana"
+    // let proyect = "dana"
     let result = await FindZona(body, query, proyect, "ZONAS")
     // console.log(result);
     result = sortJSON(result, 'index', 'asc');

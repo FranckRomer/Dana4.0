@@ -1,4 +1,5 @@
-import { FindDispZona } from "../../../../funcionesCrud"
+import { FindData } from "../../../../funcionesCrud"
+import jwt from "jsonwebtoken";
 
 //
 function sortJSON(data, key, orden) {
@@ -17,15 +18,25 @@ function sortJSON(data, key, orden) {
 }
 ////////////////////////////////////////////////////////////////
 export default async function findDispZona(req, res) {
+    // cookies
+    const { myTokenName } = req.cookies;
+    if (!myTokenName) {
+        return res.status(401).json({ error: "Not logged in" });
+    }
+    const { username, proyect } = jwt.verify(myTokenName, "secret");
+    // 
     let body = req.body
     let zona = body.zona
     // console.log("---------------------------------")
     // console.log("Llego un mensaje a findDisp: ");
-    // console.log(zona);
-    if (zona == undefined) {
-        res.status(200).json(false)
-    }
-    let result = await FindDispZona(zona, "DISPOSITIVOS")
+    // console.log(body);
+    // if (zona == undefined) {
+    //     res.status(200).json(false)
+    // }
+    let query = { "zona": body.zona }
+
+    
+    let result = await FindData( query, proyect, "DISPOSITIVOS")
     result = sortJSON(result, 'pin', 'asc');
     result = sortJSON(result, 'can', 'asc');
     // console.log(result);

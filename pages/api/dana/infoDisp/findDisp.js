@@ -1,4 +1,5 @@
-import { UpdateReg, FindReg, horaActual } from "../../../../funcionesCrud"
+import { FindData } from "../../../../funcionesCrud"
+import jwt from "jsonwebtoken";
 
 //
 function sortJSON(data, key, orden) {
@@ -17,17 +18,30 @@ function sortJSON(data, key, orden) {
 }
 ////////////////////////////////////////////////////////////////
 export default async function findDisp(req, res) {
+    // cookies
+    const { myTokenName } = req.cookies;
+    if (!myTokenName) {
+        return res.status(401).json({ error: "Not logged in" });
+    }
+    const { username, proyect } = jwt.verify(myTokenName, "secret");
+    // 
     let body = req.body
     let can = body.can
     let pin = body.pin
-    // console.log("---------------------------------")
-    // console.log("Llego un mensaje a findDisp: ");
-    // console.log(body);
+    console.log("---------------------------------")
+    console.log("Llego un mensaje a findDisp: ");
+    console.log(body);
+    let query = { "can": can, "pin": pin }
     if (!body.can) {
         can = 0
         pin = 0
+        query = ""
     } 
-    let result = await FindReg(can, pin, "DISPOSITIVOS")
+    // let result = await FindReg(can, pin, "DISPOSITIVOS")
+    
+    // let proyect = "dana"
+    let result = await FindData( query, proyect, "ZONAS")
+    
     result = sortJSON(result, 'pin', 'asc');
     result = sortJSON(result, 'can', 'asc');
     // console.log(result);

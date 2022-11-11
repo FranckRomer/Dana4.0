@@ -34,7 +34,7 @@ const Zonas = () => {
         </div>
 
         <h1 className={styles.title}>
-          <a href="">Zonas Joya</a>
+          <a href="">Zonas</a>
         </h1>
 
 
