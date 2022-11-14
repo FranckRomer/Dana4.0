@@ -9,6 +9,7 @@ const Zonas = () => {
 
   React.useEffect(() => {
     obtenerDatos()
+    
   })
   const obtenerDatos = async () => {
     try {

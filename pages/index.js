@@ -2,12 +2,14 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import React from 'react'
+import Headers from '../component/Headers/Headers'
+
 
 export default function Home() {
-  const [modal, setModal] = React.useState(false)
-  const invertirModal = () => {
-    setModal(!modal)
-  }
+  // const [modal, setModal] = React.useState(false)
+  // const invertirModal = () => {
+  //   setModal(!modal)
+  // }
 
   return (
     <div className={styles.container}>
@@ -20,7 +22,8 @@ export default function Home() {
 
 
       {/********************** HEADER **********************/}
-      <header className={styles.Headers}>
+      <Headers />
+      {/* <header className={styles.Headers}>
         <div className={styles.home}>
           <Link href={"/"} className={styles.LinkHome}>Home</Link>
         </div>
@@ -28,7 +31,7 @@ export default function Home() {
         <div className={styles.menu} onClick={invertirModal}>
           <img src="menu.png" />
         </div>
-      </header>
+      </header> */}
 
       {/********************** MAIN **********************/}
       <main className={styles.main}>
@@ -42,7 +45,7 @@ export default function Home() {
       </main>
       
       {/********************* MODAL *********************/}
-      {modal ?
+      {/* {modal ?
         <nav className={styles.nav} >
           <div className={styles.modalOscuro} onClick={() => setModal(!modal)}></div>
           <ul >
@@ -54,7 +57,7 @@ export default function Home() {
           </ul>
         </nav>
         : ""
-      }
+      } */}
 
     </div>
   )

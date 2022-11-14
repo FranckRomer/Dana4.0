@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Headers from "../component/Headers/Headers";
 
 function Dashboard() {
   const [user, setUser] = useState({
@@ -24,6 +25,7 @@ function Dashboard() {
   };
   return (
     <div>
+      <Headers />
       {JSON.stringify(user)}
       <button onClick={() => getProfile()}>profile</button>
       <button onClick={() => logout()}>Logout</button>

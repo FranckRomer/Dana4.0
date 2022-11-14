@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import styles from "../../styles/Login.module.css"
 import Link from "next/link";
+import Headers from "../../component/Headers/Headers";
 
 function Login() {
   const [credentials, setCredentials] = useState({
@@ -31,9 +32,10 @@ function Login() {
 
   return (
     <main className={styles.body}>
-      <header className={styles.Headers}>
+      {/* <header className={styles.Headers}>
         <Link href={"./"} className={styles.LinkHome}>Home</Link>
-      </header>
+      </header> */}
+      <Headers />
 
       <form onSubmit={handleSubmit} className={styles.formulario}>
         <h1>Iniciar sesión</h1>

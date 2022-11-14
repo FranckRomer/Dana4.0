@@ -21,13 +21,20 @@
 }
 
 .Body {
-  height: auto;
+  height: 100vmax;
   /* background-color: black; */
   background: rgb(2, 178, 197);
   display: block;
   align-items: center;
   justify-content: center;
 }
+
+.links{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid aliceblue;
+}
+
 
 .Titulo {
   text-align: center;
@@ -86,8 +93,16 @@
 @media (max-width: 700px) {
   .inputcontainer, .dropcontainer{
     width: 100%;
-    position: static;
+    position: static;    
   }
+  .links{
+    display: grid;    
+    border-top: 1px solid  aliceblue;
+  }
+  .links a{
+    border-bottom: 1px solid aliceblue;
+  }
+  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -95,7 +110,7 @@
   .Body {
     color: aliceblue;
     background: black;
-    /* background: linear-gradient(90deg, rgba(0,148,163,1) 0%, rgba(0,0,0,1) 100%); */
-    
+    /* background: linear-gradient(90deg, rgba(0,148,163,1) 0%, rgba(0,0,0,1) 100%); */    
   }
+  
 }
