@@ -24,7 +24,7 @@ const Zonas = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Zonas</title>
+        <title>Zonas Mapa</title>
         <meta name="description" content="Zonas" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
