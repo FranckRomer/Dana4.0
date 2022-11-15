@@ -38,7 +38,7 @@ const AddZone = () => {
         e.preventDefault();
         console.log(dropZone);
         try {
-            const res = await axios.put("/api/dana/infoDisp/dropZone", dropZone);
+            const res = await axios.put("/api/dana/infoDisp/zonas/dropZone", dropZone);
             console.log(res);
         } catch (error) {
             console.log("NO SE PUDO ENVIAR");

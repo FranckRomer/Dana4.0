@@ -4,10 +4,14 @@ import axios from "axios";
 import Link from 'next/link';
 import react from 'react';
 
-const AddZone = () => {
+const AddZoneSec = () => {
     const [newZone, setNewZone] = React.useState({
-        zona: "",
-        index: "",        
+        zonaPrin: "",
+        zonaSec: "",
+        index: "",
+        tipo: "",
+        top: "",
+        left: "",
     })
     const [dropZone, setDropZone] = React.useState({
         zona: ""
@@ -21,14 +25,14 @@ const AddZone = () => {
         try {
             // POST DE NUEVA IMAGEN DE ZONAS
             const body = new FormData();
-            body.append("file", image);            
-            const response = await fetch("/api/dana/infoDisp/zonas/addImagen", {
+            body.append("file", image);
+            const response = await fetch("/api/dana/infoDisp/zonas/addImagenSec", {
                 method: "POST",
                 body
-            });            
+            });
             console.log(response);
             // POST DE NOMBRE DE LAS ZONAS
-            const res = await axios.put("/api/dana/infoDisp/zonas/addZone", newZone);
+            const res = await axios.put("/api/dana/infoDisp/zonas/addZoneSec", newZone);
             console.log(res);
         } catch (error) {
             console.log("NO SE PUDO ENVIAR");
@@ -38,7 +42,7 @@ const AddZone = () => {
         e.preventDefault();
         console.log(dropZone);
         try {
-            const res = await axios.put("/api/dana/infoDisp/dropZone", dropZone);
+            const res = await axios.put("/api/dana/infoDisp/zonas/dropZoneSec", dropZone);
             console.log(res);
         } catch (error) {
             console.log("NO SE PUDO ENVIAR");
@@ -84,19 +88,28 @@ const AddZone = () => {
                     ******************************************************************
                 */}
                 <section className={styles.DropData}>
-                    <h1 className={styles.Titulo}>Agregar Zona</h1>
+                    <h1 className={styles.Titulo}>Agregar Zona Secundaria</h1>
                     <form onSubmit={AgregarZona} className={styles.inputcontainer}>
                         <input
-                            type="" name="ZONA" placeholder='ZONA'
+                            type="" name="ZONA_PRINCIPAL" placeholder='ZONA PRINCIPAL'
                             onChange={(e) =>
                                 setNewZone({
                                     ...newZone,
-                                    zona: e.target.value,
+                                    zonaPrin: e.target.value,
                                 })
                             }>
                         </input>
                         <input
-                            type="" name="Orden" placeholder='ORDEN'
+                            type="" name="zonaSec" placeholder='NOMBRE ZONA SECUNDARIA'
+                            onChange={(e) =>
+                                setNewZone({
+                                    ...newZone,
+                                    zonaSec: e.target.value,
+                                })
+                            }>
+                        </input>
+                        <input
+                            type="" name="index" placeholder='NUMERO DE ORDEN'
                             onChange={(e) =>
                                 setNewZone({
                                     ...newZone,
@@ -104,7 +117,34 @@ const AddZone = () => {
                                 })
                             }>
                         </input>
-
+                        <input
+                            type="" name="tipo" placeholder='TIPO'
+                            onChange={(e) =>
+                                setNewZone({
+                                    ...newZone,
+                                    tipo: e.target.value,
+                                })
+                            }>
+                        </input>
+                        <input
+                            type="" name="top" placeholder='POSICION X'
+                            onChange={(e) =>
+                                setNewZone({
+                                    ...newZone,
+                                    top: e.target.value,
+                                })
+                            }>
+                        </input>
+                        <input
+                            type="" name="left" placeholder='POSICION Y'
+                            onChange={(e) =>
+                                setNewZone({
+                                    ...newZone,
+                                    left: e.target.value,
+                                })
+                            }>
+                        </input>
+                        {/* --------------------------------------------------- */}
                         <br />
                         <div className={styles.inputFile}>
                             <input
@@ -118,13 +158,14 @@ const AddZone = () => {
 
                         </div>
                         <br />
+                        {/* ---------------------------- */}
                         <button type="" className={styles.Agregar} >Agregar</button>
                     </form>
 
                 </section>
                 {/* //////////////////////////////////////////////// */}
                 <section className={styles.DropData}>
-                    <h1 className={styles.Titulo}>Eliminar Zona</h1>
+                    <h1 className={styles.Titulo}>Eliminar Zona Secundaria</h1>
                     <form onSubmit={EliminarZona} className={styles.dropcontainer}>
                         <input
                             type="" name="ZONA" placeholder='ZONA'
@@ -144,4 +185,4 @@ const AddZone = () => {
     )
 }
 
-export default AddZone
+export default AddZoneSec
