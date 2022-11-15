@@ -14,7 +14,7 @@ const Zonas = () => {
   const obtenerDatos = async () => {
     try {
       const data = await axios.put('/api/dana/infoDisp/findZona')
-      console.log(data.data);
+      // console.log(data.data);
       setZonas(data.data)
     } catch (error) {
       console.log("NO FUNCIONO");

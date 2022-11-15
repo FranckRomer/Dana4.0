@@ -1,7 +1,9 @@
 var MongoClient = require('mongodb').MongoClient;
 var moment = require('moment');
 
+
 var url = "mongodb://dana:root@74.208.16.217:28018"
+
 // router.use(cors())
 // Funcion que Insera el nuevo dato de TIEMPO_REAL
 export function InsertUpdate(body, collection) {
