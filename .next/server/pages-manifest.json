@@ -2,11 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/api/dana/infoDisp/findZonasSec": "pages/api/dana/infoDisp/findZonasSec.js",
-  "/api/dana/infoDisp/findDispZona": "pages/api/dana/infoDisp/findDispZona.js",
-  "/Zonas/ZonaMapa/[zonaMapa]": "pages/Zonas/ZonaMapa/[zonaMapa].js",
-  "/": "pages/index.js",
-  "/Zonas": "pages/Zonas.js",
-  "/api/dana/infoDisp/findZona": "pages/api/dana/infoDisp/findZona.js",
-  "/Configuraciones/AddZoneSec": "pages/Configuraciones/AddZoneSec.js"
+  "/": "pages/index.js"
 }
