@@ -55,3 +55,8 @@ component/Modal/index.js
 .next/static/chunks/pages/Zonas/ZonaMapa/[zonaMapa].js
 .next/static/chunks/pages/Zonas/ZonaSec/[zonaSec].js
 .next/static/development/_buildManifest.js
+.next/cache/webpack/server-development/6.pack
+.next/cache/webpack/server-development/18.pack
+.next/cache/webpack/server-development/20.pack
+.next/cache/webpack/server-development/index.pack
+.next/cache/webpack/server-development/index.pack.old
