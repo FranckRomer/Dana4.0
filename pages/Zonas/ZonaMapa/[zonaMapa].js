@@ -9,7 +9,7 @@ import Link from 'next/link'
 import axios from "axios";
 // const DataCochera = Data.Cochera
 
-const ProductItem = () => {
+const ZonaMapa = () => {
     const { query: { zonaMapa } } = useRouter()
     const [dispositivos, setDispositivos] = React.useState([])
     const [zonasSec, setZonasSec] = React.useState([])
@@ -39,7 +39,9 @@ const ProductItem = () => {
             </header>
             <main>
                 <section className={styles.Imagen} >
-                    <img src={("/images/joya/zonas/" + zonaMapa + ".jpg").toLowerCase()} />
+                    {/* <Image></Image> */}
+                {/* <img src={("/uploads/zonas/Laboratorio.jpg")} /> */}
+                    <img src={("/uploads/zonas/" + zonaMapa + ".jpg").toLowerCase()} />
                 </section>
                 {/* Iluminarias */}
                 <section>
@@ -70,4 +72,4 @@ const ProductItem = () => {
     )
 }
 
-export default ProductItem
+export default ZonaMapa

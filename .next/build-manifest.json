@@ -15,10 +15,25 @@
   ],
   "rootMainFiles": [],
   "pages": {
-    "/": [
+    "/Configuraciones/AddZoneSec": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/index.js"
+      "static/chunks/pages/Configuraciones/AddZoneSec.js"
+    ],
+    "/Zonas": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/Zonas.js"
+    ],
+    "/Zonas/ZonaMapa/[zonaMapa]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/Zonas/ZonaMapa/[zonaMapa].js"
+    ],
+    "/Zonas/ZonaSec/[zonaSec]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/Zonas/ZonaSec/[zonaSec].js"
     ],
     "/_app": [
       "static/chunks/webpack.js",
