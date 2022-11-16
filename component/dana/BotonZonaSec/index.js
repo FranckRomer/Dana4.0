@@ -1,6 +1,6 @@
 import Link from "next/link"
 // import styles from '../../../styles/ZonaDisp.module.css'
-import styles from '../../../styles/ZonaDisp.module.css'
+import styles from '../../../styles/Zonas/ZonaDisp.module.css'
 
 function BotonZonaSec(props) {
     // console.log(props.Data);

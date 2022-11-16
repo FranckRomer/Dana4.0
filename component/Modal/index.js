@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
-import styles from "../../styles/Modal.module.css"
+import styles from "../../styles/Zonas/Modal.module.css"
 
 export default function Modal({show,onClose, children}){
     const [isBrowser, setIsBrowser] = React.useState(false)

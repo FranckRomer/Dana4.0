@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../../styles/Pruebas.module.css'
+import styles from '../../styles/Configuraciones/Pruebas.module.css'
 import axios from "axios";
 
 const InterfaceBtn = () => {

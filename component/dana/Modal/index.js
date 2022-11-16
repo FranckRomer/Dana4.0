@@ -1,6 +1,6 @@
 import React from 'react'
 import Modal from '../../Modal';
-import stylesModal from "../../../styles/Modal.module.css"
+import stylesModal from "../../../Zonas/styles/Modal.module.css"
 import axios from "axios";
 
 function ModalComponent(props) {

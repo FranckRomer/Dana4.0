@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import styles from '../../styles/Zonas.module.css'
+import styles from '../../styles/Zonas/Zonas.module.css'
 import Link from 'next/link'
 import axios from 'axios'
 

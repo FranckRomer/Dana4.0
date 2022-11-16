@@ -1,7 +1,7 @@
-import styles from '../../../styles/ZonaDisp.module.css'
+import styles from '../../../styles/Zonas/ZonaDisp.module.css'
 import React from 'react'
 import Modal from '../../Modal';
-import stylesModal from "../../../styles/Modal.module.css"
+import stylesModal from "../../../styles/Zonas/Modal.module.css"
 import axios from "axios";
 // import { SketchPicker } from 'react-color';
 // import { render } from 'react-dom';
