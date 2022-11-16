@@ -37,7 +37,7 @@
 .imagen_ok {
     width: 100px;
     height: 100px;
-    background-image: url("../public/littleHouse.png");
+    background-image: url("../../public/littleHouse.png");
     background-size: 80%;
     background-repeat: no-repeat;
     position: relative;

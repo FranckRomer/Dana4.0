@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import styles from "../../styles/Login.module.css"
+// import styles from "../../styles/Home/Login.module.css"
+import styles from '../../styles/Home/Login.module.css'
 import Link from "next/link";
 import Headers from "../../component/Headers/Headers";
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../../styles/Configuraciones.module.css'
+import styles from '../../styles/Configuraciones/Configuraciones.module.css'
 import axios from "axios";
 import Link from 'next/link';
 import react from 'react';

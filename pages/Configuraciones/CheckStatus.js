@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../../styles/Pruebas.module.css'
+import styles from '../../styles/Configuraciones/Pruebas.module.css'
 import { AddLight } from '../../component/AddLight'
 import { InterfaceBtn } from '../../component/InterfaceBtns';
 import Link from 'next/link';

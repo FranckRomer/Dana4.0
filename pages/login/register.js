@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Headers from '../../component/Headers/Headers';
-import styles from "../../styles/Login.module.css"
+import styles from "../../styles/Home/Login.module.css"
 
 const Register = () => {
     const [credentials, setCredentials] = useState({

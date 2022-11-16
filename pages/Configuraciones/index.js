@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import styles from '../../styles/Configuraciones.module.css'
+import styles from '../../styles/Configuraciones/Configuraciones.module.css'
 import Link from 'next/link'
 import Headers from '../../component/Headers/Headers'
 

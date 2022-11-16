@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home/Home.module.css'
 import Link from 'next/link'
 import React from 'react'
 import Headers from '../component/Headers/Headers'
@@ -18,7 +18,6 @@ export default function Home() {
 
       {/********************** HEADER **********************/}
       <Headers />
-      
 
       {/********************** MAIN **********************/}
       <main className={styles.main}>
