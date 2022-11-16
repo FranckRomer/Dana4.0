@@ -16,7 +16,7 @@ export default async function AddZone(req, res) {
     console.log("---------------------------------")
     console.log("Llego un mensaje a AddZone: ");
     // console.log(body);
-    let query = { "zona": body.zona }
+    let query = { "zona": body.zona, "zonaSec": body.zonaSec }
     // let proyect = "dana"
     let result = await UpgrateZone(body, query, proyect, "ZONASSEC")
     console.log(result);

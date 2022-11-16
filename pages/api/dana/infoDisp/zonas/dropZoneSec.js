@@ -13,7 +13,8 @@ export default async function DropZone(req, res) {
     console.log("---------------------------------")
     console.log("Llego un mensaje a DropZone: ");
     console.log(body);
-    let query = { "zona" : body.zona }
+    let query = { "zona" : body.zona , "zonaSec": body.zonaSec}
+    console.log(query);
     // let proyect = "dana"
     let result = DropData(body, query, proyect ,"ZONASSEC")
     console.log(result);
