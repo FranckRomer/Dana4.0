@@ -1,4 +1,4 @@
-.Headers {
+/* .Headers {
   width: 100%;
   height: 50px;
   background-color: rgba(0, 0, 0, .5);
@@ -13,20 +13,24 @@
   border: 1px solid white;
   border-radius: 10px;
   color: aliceblue;
-}
+} */
 
-.Headers a:hover {
+/* .Headers a:hover {
   /* background-color: #FC00FF; */
-  color: wheat;
-}
+  /* color: wheat;
+}  */
 
 .Body {
-  height: 100vmax;
+  width: 100%;
+  height: auto;
   /* background-color: black; */
-  background: rgb(2, 178, 197);
+  /* background: rgb(2, 178, 197); */
   display: block;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 0;
+  padding-top: 30px;
 }
 
 .links{

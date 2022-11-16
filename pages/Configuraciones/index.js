@@ -3,6 +3,7 @@ import Head from 'next/head'
 import styles from '../../styles/Configuraciones/Configuraciones.module.css'
 import Link from 'next/link'
 import Headers from '../../component/Headers/Headers'
+import { TableDisp } from '../../component/TableDisp'
 
 const Configuraciones = () => {
     return (
@@ -25,6 +26,9 @@ const Configuraciones = () => {
                     <Link href={"/Configuraciones/AddZoneSec"} className={styles.Link}>Agregar Zona Secundaria</Link>
                     <Link href={"/Configuraciones/CheckStatus"} className={styles.Link}>Encendido Manual</Link>
                 </section>
+
+                <TableDisp/>
+
             </main>
         </div>
     )
