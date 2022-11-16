@@ -141,6 +141,7 @@
   color: wheat;
   border-bottom: 3px solid wheat;
   transform: scale(1.2);
+  transition: transform 0.5s ease-in-out;
 }
 
 

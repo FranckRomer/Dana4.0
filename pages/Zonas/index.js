@@ -3,13 +3,14 @@ import Head from 'next/head'
 import styles from '../../styles/Zonas/Zonas.module.css'
 import Link from 'next/link'
 import axios from 'axios'
+import Image from 'next/image'
 
 const Zonas = () => {
   const [zonas, setZonas] = React.useState([])
 
   React.useEffect(() => {
     obtenerDatos()
-    
+
   })
   const obtenerDatos = async () => {
     try {
@@ -43,7 +44,20 @@ const Zonas = () => {
 
           {
             zonas.map((item, index) => (
-              <Link href={"./Zonas/ZonaMapa/" + item.zona} className={styles.Link}>{item.zona}</Link>
+              <div>
+                <Link href={"./Zonas/ZonaMapa/" + item.zona} className={styles.Link}>
+                  <div  className={styles.zonasContain}>
+                    <Image src={"/uploads/zonas/" + item.zona + ".jpg"} width="120px" height="80px" />
+                    <br/>
+                    <label>{item.zona}</label>
+                    
+                  </div>
+                </Link>
+                {/* <Image src={"/uploads/zonas/" + item.zona +".jpg"} width="120px" height="80px"/>
+                <br/>
+                <Link href={"./Zonas/ZonaMapa/" + item.zona} className={styles.Link}>{item.zona}</Link> */}
+              </div>
+
             ))
           }
 

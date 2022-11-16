@@ -2,11 +2,13 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/login": "pages/login.js",
+  "/": "pages/index.js",
+  "/Zonas": "pages/Zonas.js",
   "/Zonas/ZonaMapa/[zonaMapa]": "pages/Zonas/ZonaMapa/[zonaMapa].js",
+  "/api/dana/infoDisp/findZona": "pages/api/dana/infoDisp/findZona.js",
   "/api/dana/infoDisp/findDispZona": "pages/api/dana/infoDisp/findDispZona.js",
   "/api/dana/infoDisp/findZonasSec": "pages/api/dana/infoDisp/findZonasSec.js",
-  "/Configuraciones/AddZoneSec": "pages/Configuraciones/AddZoneSec.js",
-  "/Zonas": "pages/Zonas.js",
   "/Zonas/ZonaSec/[zonaSec]": "pages/Zonas/ZonaSec/[zonaSec].js",
-  "/api/dana/infoDisp/findZona": "pages/api/dana/infoDisp/findZona.js"
+  "/Configuraciones": "pages/Configuraciones.js"
 }

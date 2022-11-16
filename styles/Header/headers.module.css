@@ -36,6 +36,8 @@
 
 .menu:hover {
     background-color: aliceblue;
+    transform: scale(1.2);
+    transition: transform 0.5s ease-in-out;
 }
 
 
@@ -89,6 +91,7 @@
     /* 58a6ff */
     background-color: #0070f3;
     color: aliceblue;
+    
 }
 
 
