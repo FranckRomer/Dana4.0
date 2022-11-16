@@ -1,0 +1,122 @@
+.Zona {
+    width: auto;
+    height: 100%;
+    background: rgb(0, 172, 255);
+    background: linear-gradient(180deg, rgba(0, 172, 255, 1) 0%, rgba(0, 0, 0, 1) 25%);
+
+}
+
+.Headers {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: left;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+
+.Headers a {
+    margin-top: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.Headers a:hover {
+    color: wheat;
+}
+
+.Imagen {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+.Imagen img {
+    width: 100%;
+    height: 100%;
+}
+
+.Cubo {
+    width: 18px;
+    height: 18px;
+    /* border-radius: 20%; */
+    z-index: 9990;
+    position: fixed;
+    /* justify-content: left; */
+    align-items: center;
+    /* transition: transform .3s; */
+    border-radius: 50%;
+    display: flex;
+}
+
+.Cubo2 {
+    width: 18px;
+    height: 18px;
+    /* border-radius: 20%; */
+    z-index: 9990;
+    position: fixed;
+    /* justify-content: left; */
+    align-items: center;
+    /* transition: transform .3s; */
+    border-radius: 50%;
+    display: flex;
+}
+
+.Cubo button {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 0;
+    border-radius: 50%;
+    transition: transform .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Cubo img {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    /* transition: transform .3s; */
+    /* border: 1px solid red; */
+}
+.LinkZonaSec {
+    width: 30px;
+    height: 30px;
+    /* border: 1px solid red; */
+}
+
+.LinkZonaSec img{
+    width: 30px;
+    height: 30px;
+    /* border: 1px solid red; */
+}
+
+.Cubo,
+.Cubo button:hover {
+    transform: scale(1.8);
+}
+
+
+@media screen and (min-width: 480px) {
+    .Cubo {
+        width: 17px;
+        height: 17px;
+    }
+
+    .Cubo img {
+        width: 14px;
+        height: 14px;
+    }
+}
