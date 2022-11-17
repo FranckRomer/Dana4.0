@@ -32,11 +32,11 @@ export default async function sendEsp(req, res) {
   let proyects;
   if (!myTokenName) {
     proyects = "dana"
-  } else{
-    const  { proyect } = jwt.verify(myTokenName, "secret");
+  } else {
+    const { proyect } = jwt.verify(myTokenName, "secret");
     proyects = proyect
   }
-  
+
   //
   let body = req.body
   console.log("---------------------------------")
@@ -50,48 +50,55 @@ export default async function sendEsp(req, res) {
   //
   if (body.rgb != "xxx") {
     // UpdateReg(body, "DISPOSITIVOS")
-    
+
     UpgrateData(body, query, proyects, "DISPOSITIVOS")
   }
   // buscar REGISTRO
-  
-  query = ""
-  let result = await FindData( query, proyects, "STATUS")
-  // console.log(result)
-  let ip_compu = result[0].ipEsp
-  console.log(ip_compu)
-  ip_compu = "http://" + ip_compu
 
-  if (body.percentage == "000" && body.rgb != "xxx") {
-    body.percentage = "100"
-    body.rgb = "000"
+  query = ""
+  let result = await FindData(query, proyects, "STATUS")
+  // console.log(result)
+  let ip_compu = ""
+  // -------------------------------------------------------
+  for (let index = 0; index < ip_compu.length; index++) {
+    // const element = array[index];
+    ip_compu = result[index].ipEsp
+    console.log(ip_compu)
+    ip_compu = "http://" + ip_compu
+
+    if (body.percentage == "000" && body.rgb != "xxx") {
+      body.percentage = "100"
+      body.rgb = "000"
+    }
+    // Send a POST request
+    if (!body.inst) {
+      body.inst = "FF1"
+    }
+    if (!body.tiempo) {
+      body.tiempo = "00"
+    }
+    if (!body.tipo) {
+      body.tipo = "light"
+    }
+    try {
+      await axios({
+        method: 'post',
+        url: ip_compu,
+        data: {
+          inst: body.inst.toString(),
+          can: body.can.toString(),
+          pin: body.pin.toString(),
+          percentage: body.percentage.toString(),
+          tiempo: body.tiempo.toString(),
+          rgb: body.rgb.toString(),
+          tipo: body.tipo.toString(),
+        }
+      });
+    } catch (error) {
+      console.log("DATO NO SE PUDO ENVIAR AL ESP32");
+    }
   }
-  // Send a POST request
-  if (!body.inst) {
-    body.inst = "FF1"
-  }
-  if (!body.tiempo) {
-    body.tiempo = "00"
-  }
-  if (!body.tipo) {
-    body.tipo = "light"
-  }
-  try {
-    await axios({
-      method: 'post',
-      url: ip_compu,
-      data: {
-        inst: body.inst.toString(),
-        can: body.can.toString(),
-        pin: body.pin.toString(),
-        percentage: body.percentage.toString(),
-        tiempo: body.tiempo.toString(),
-        rgb: body.rgb.toString(),
-        tipo: body.tipo.toString(),
-      }
-    });
-  } catch (error) {
-    console.log("DATO NO SE PUDO ENVIAR AL ESP32");
-  }
+
+
   res.status(200).json({ name: result })
 }
