@@ -1,0 +1,63 @@
+.body {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* border: 1px solid aliceblue; */
+}
+.buscador{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.buscador input{
+    border: 0;
+    border-bottom: 1px solid aliceblue;
+    background-color: transparent;
+}
+.buscador input:focus{
+    outline: none;
+}
+.tabla{
+    width: 820px;
+    max-height: 350px;
+    display: grid;
+    overflow-y: scroll;
+    border: 1px solid aliceblue;
+}
+.tabla::-webkit-scrollbar {
+    display: none;
+}
+
+.encabezado, .datos {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    /* grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px ; */
+    grid-template-columns: repeat(8, 100px);
+    padding: 10px;
+}
+.encabezado{
+    font-size: 18px;
+    font-family: serif;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    background-color: beige;
+    color: black;
+    border-bottom: 1px solid aliceblue;
+    
+}
+.datos{
+    border-bottom:  1px solid gray;
+}
+
+
+@media only screen and (max-width: 850px) {
+    .tabla{
+        width: 300px;
+        
+    }
+}

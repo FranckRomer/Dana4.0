@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import styles from "../../styles/Configuraciones/tabla.module.css"
 
-function TableDisp(props) {
+function TableZonasSec(props) {
     // UseSTATE
     const [dispositivos, setDispositivos] = useState([])
     const [searchValue, setSearchValue] = useState('');
@@ -12,7 +12,7 @@ function TableDisp(props) {
     })
     const obtenerDatos = async () => {
         try {
-            const data = await axios.put('/api/dana/infoDisp/findDisp')
+            const data = await axios.put('/api/dana/infoDisp/findZonasSec', {zonaPrin: ""})
             setDispositivos(data.data)
             // console.log(data.data);
         } catch (error) {
@@ -37,7 +37,7 @@ function TableDisp(props) {
             try {
                 return el.zona.toLowerCase().includes(searchValue)
             } catch (error) {
-                return el.can.toLowerCase().includes(searchValue)
+                
             }
             
         }
@@ -52,7 +52,7 @@ function TableDisp(props) {
             <div className={styles.buscador}>
                 
                 <input 
-                    type="input"  placeholder="Can o Zona" name="name" id='name' required 
+                    type="input"  placeholder="Buscar" name="name" id='name' required 
                     value={searchValue}
                     onChange={onSearchValueChange}
                 />
@@ -61,27 +61,22 @@ function TableDisp(props) {
             <div className={styles.tabla}>
                 {/* ENCABEZADO */}
                 <div className={styles.encabezado}>
-                    <div>Name</div>
-                    <div>Can</div>
-                    <div>Pin</div>
-                    <div>%</div>
-                    <div>RGB</div>
-                    <div>Zona</div>
+                    <div>Zona Principal</div>
+                    <div>Zona Secundaria</div>
+                    <div>Index</div>
                     <div>Tipo</div>
+                    <div>Name Img</div>
                     <div>Modificar</div>
                 </div>
                 
                 {/* TABLA */}
-                
                 {filteredData.map((data, index) => (
                     <div className={styles.datos}> 
-                        <div>{data.name}</div>
-                        <div>{data.can}</div>
-                        <div>{data.pin}</div>
-                        <div>{data.percentage}</div>
-                        <div>{data.rgb}</div>
-                        <div>{data.zona}</div>
+                        <div>{data.zonaPrin}</div>
+                        <div>{data.zonaSec}</div>
+                        <div>{data.index}</div>
                         <div>{data.tipo}</div>
+                        <div>{data.name_image}</div>
                         <div><button></button></div>
                     </div>
                 
@@ -92,4 +87,4 @@ function TableDisp(props) {
     )
 }
 
-export { TableDisp }
+export { TableZonasSec }

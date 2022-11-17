@@ -36,10 +36,13 @@ export default async function FindZonas(req, res) {
     // console.log("---------------------------------")
     // console.log("Llego un mensaje a FindZonas: ");
     // console.log(body);
-    if (body.zonaPrin ==( undefined  || "")) {
-        res.status(401).json("")
-    }
     let query = { "zonaPrin": body.zonaPrin }
+    if (body.zonaPrin ==( undefined )) {
+        res.status(401).json("")
+    } else if(body.zonaPrin == ""){
+        query = {}
+    }
+    
     // console.log(query);
     // let proyect = "dana"
     let result = await FindData( query, proyect, "ZONASSEC")
