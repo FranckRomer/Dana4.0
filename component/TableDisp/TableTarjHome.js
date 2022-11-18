@@ -12,7 +12,7 @@ function TableTarjHome(props) {
     })
     const obtenerDatos = async () => {
         try {
-            const data = await axios.put('/api/dana/infoDisp/findZona')
+            const data = await axios.put('/api/dana/infoDisp/findTarjHome')
             setDispositivos(data.data)
             // console.log(data.data);
         } catch (error) {
@@ -35,7 +35,7 @@ function TableTarjHome(props) {
         else {
             // console.log(el.element);
             try {
-                return el.zona.toLowerCase().includes(searchValue)
+                return el.ipEsp.toLowerCase().includes(searchValue)
             } catch (error) {
                 
             }
@@ -61,18 +61,19 @@ function TableTarjHome(props) {
             <div className={styles.tabla}>
                 {/* ENCABEZADO */}
                 <div className={styles.encabezado}>
-                    <div>Zona</div>
-                    <div>Posición</div>
-                    <div>Name Img</div>
-                    <div>Modificar</div>
+                    <div>Ip Esp</div>
+                    <div>Proyect</div>
+                    <div>Heard Beat</div>
+                    <div>Hora de ultimo envio</div>
                 </div>
                 
                 {/* TABLA */}
                 {filteredData.map((data, index) => (
                     <div className={styles.datos}> 
-                        <div>{data.zona}</div>
-                        <div>{data.index}</div>
-                        <div>{data.name_image}</div>
+                        <div>{data.ipEsp}</div>
+                        <div>{data.proyect}</div>
+                        <div>{data.heatBeat? "✅" : "❌"}</div>
+                        <div>{data.hora}</div>
                         <div><button></button></div>
                     </div>
                 
