@@ -38,5 +38,8 @@ export default async function findTarjHome(req, res) {
     // result = sortJSON(result, 'pin', 'asc');
     // result = sortJSON(result, 'can', 'asc');
     // console.log(result);
+    // if (condition) {
+        
+    // }
     res.status(200).json(result)
 }

@@ -1,4 +1,4 @@
-import { query } from "express";
+// import { query } from "express";
 import {UpgrateData, horaActual, FindData} from "../../../../funcionesCrud"
 
 export default async function insetData(req, res) {

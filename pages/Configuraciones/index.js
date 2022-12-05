@@ -61,7 +61,7 @@ const Configuraciones = () => {
                             <h2 onClick={() => { setTabla("ZonasSec") }}>Zonas Secundarias</h2>
                             <h1 onClick={() => { setTabla("TarjetaH") }}>Tarjeta Home</h1>
                     </div>
-                    : ""
+                    : "Sin tablas"
                 }
                 <div>
                     {

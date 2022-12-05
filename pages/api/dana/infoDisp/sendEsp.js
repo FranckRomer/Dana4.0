@@ -57,10 +57,10 @@ export default async function sendEsp(req, res) {
 
   query = ""
   let result = await FindData(query, proyects, "STATUS")
-  // console.log(result)
+  console.log(result)
   let ip_compu = ""
   // -------------------------------------------------------
-  for (let index = 0; index < ip_compu.length; index++) {
+  for (let index = 0; index < result.length; index++) {
     // const element = array[index];
     ip_compu = result[index].ipEsp
     console.log(ip_compu)
