@@ -1,0 +1,91 @@
+.Dashboard{
+    width: 100%;
+    max-height: 100vmax;
+    min-height: calc(100vh + 300px);
+    display: grid;
+    /* transition: background 500ms; */
+}
+.main{
+    max-width: 60%;
+    min-height: 100vh;
+    margin:10% 20% 0 20% ;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 10% 0 0 0;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.username h1{
+    color: crimson;
+    text-align: center;  
+}
+.proyect h1{
+    text-align: center;
+    color: skyblue;
+}
+
+.main button{
+    background-color: transparent;
+    border: none;
+    padding: 20px;
+    margin: 20px;
+    border: 3px solid crimson;
+    border-radius: 5px;  
+    transition: background-color 700ms;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.main button:hover{
+    background-color: crimson;
+    color: black
+}
+/* ................................................ */
+.oscuro{
+    position: absolute;
+    width: 100vw;
+    min-height: calc(100vh + 300px);
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+}
+.modal{
+    width: 40%;
+    height: 250px;
+    background-color: ghostwhite;
+    text-align: center;
+    color: black;
+    position: absolute;
+    margin: 20% 30% 20% 30%;
+    /* z-index: 100000; */
+}
+
+.logout, .cancelar{
+    border: 0;
+    background-color: transparent;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 40px;
+    padding: 20px;
+    border-radius: 5px;
+    transition: background-color 500ms;
+}
+.logout {
+    border: 3px solid crimson;
+}
+.cancelar{
+    border: 3px solid green;
+}
+.logout:hover{
+    background-color: crimson;
+}
+.cancelar:hover{
+    background-color: green;
+}

@@ -31,7 +31,7 @@ const Configuraciones = () => {
                     <Link href={"/Configuraciones/CheckStatus"} className={styles.Link}>Encendido Manual</Link>
                 </section>
 
-
+                {/* <h1>TABLAS</h1> */}
                 {
                     tabla == "Dispositivos" ?
                         <div className={styles.titulos}>

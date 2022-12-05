@@ -2,9 +2,9 @@ import { serialize } from "cookie";
 
 export default function logoutHandler(req, res) {
   const { myTokenName } = req.cookies;
-  if (!myTokenName) {
-    return res.status(401).json({ error: "Not logged in" });
-  }
+  // if (!myTokenName) {
+  //   return res.status(401).json({ error: "Not logged in" });
+  // }
 
   const serialized = serialize("myTokenName", null, {
     httpOnly: true,
