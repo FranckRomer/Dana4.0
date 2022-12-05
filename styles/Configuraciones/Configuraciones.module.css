@@ -122,6 +122,7 @@
 }
 .titulos h1{
   color: bisque;
+  border-bottom: 1px solid bisque;
 }
 .titulos h1:hover, .titulos h2:hover{
   color: bisque;
