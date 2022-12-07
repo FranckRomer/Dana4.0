@@ -57,7 +57,7 @@
 }
 .modal{
     width: 40%;
-    height: 250px;
+    height: auto;
     background-color: ghostwhite;
     text-align: center;
     color: black;
@@ -88,4 +88,18 @@
 }
 .cancelar:hover{
     background-color: green;
+}
+
+@media only screen and (max-width : 620px) {
+    .modal{
+        width: 100%;
+        margin: 20% 0% 20% 0%;
+    }
+    .main{
+        max-width: 100%;
+        width: 90%;
+        height: 10rem;
+        margin: 3rem 5% 0 5% ;
+        /* border: 1px solid red; */
+    }
 }

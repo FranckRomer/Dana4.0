@@ -18,8 +18,20 @@ function Login() {
     e.preventDefault();
   
     try {
+      console.log(credentials);
       const res = await axios.post("/api/auth/login", credentials);
+      // let myCookie = res.data.cookie
       console.log(res);
+      // myCookie = myCookie.substring(12)
+      // myCookie = myCookie.replace(/\s+/g, '')
+      // myCookie = myCookie.replace(/(\r\n|\n|\r)/gm, "")
+      // console.log(myCookie);
+      // console.log("myTokenName=" + myCookie );
+      // console.log("myTokenName=" + myCookie);
+      // document.cookie = "myTokenName=" + myCookie ;
+      // document.cookie = "user=JohnSon; secure"
+      // alert(document.cookie)
+      // setHeader("Set-Cookie", res.data.cookie)
 
       if (res.status === 200) {
         router.push("/");
@@ -49,7 +61,7 @@ function Login() {
           <div className={styles.input_campos} >
 
             <div className={styles.datos_correo}>
-              <label for="mail" className={styles.email}>UserName: </label>
+              <label  className={styles.email}>UserName: </label>
               <div className={styles.box_correo}>
                 <input
                   className={styles.correo_box}
@@ -67,7 +79,7 @@ function Login() {
 
             <div className={styles.datos_password}>
               <img src="ico/ojo.png" className={styles.ojo_abierto} />
-              <label for="password" >Contraseña: </label>
+              <label  >Contraseña: </label>
               <div className={styles.box_password}>
                 <input
                   className={styles.password_box}

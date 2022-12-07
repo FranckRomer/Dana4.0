@@ -4,7 +4,10 @@ import { jwtVerify } from "jose";
 export async function middleware(request) {
   const jwt = request.cookies.get("myTokenName");
   // console.log(jwt);
-  if (!jwt) return NextResponse.redirect(new URL("/login", request.url));
+  if (!jwt){
+    console.log("NO HAY COOKIE DE LOGEO");
+     return NextResponse.redirect(new URL("/login", request.url));
+  }
 
   // this condition avoid to show the login page if the user is logged in
   // if (jwt) {
@@ -23,9 +26,11 @@ export async function middleware(request) {
       jwt,
       new TextEncoder().encode("secret")
     );
-    // console.log({ payload });
+    console.log({ payload });
     return NextResponse.next();
   } catch (error) {
+    console.log("----------------------------------------------------------------");
+    console.log(error);
     return NextResponse.redirect(new URL("/login", request.url));
   }
 }

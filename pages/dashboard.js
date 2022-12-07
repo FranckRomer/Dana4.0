@@ -26,7 +26,7 @@ function Dashboard() {
       await axios.get("/api/auth/logout");
       router.push("/login");
     } catch (error) {
-      console.error(error.message);
+      // console.error(error.message);
     }
   };
   return (
