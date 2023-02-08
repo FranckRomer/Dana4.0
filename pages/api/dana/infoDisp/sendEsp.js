@@ -81,7 +81,7 @@ export default async function sendEsp(req, res) {
       body.tipo = "light"
     }
     try {
-      await axios({
+      axios({
         method: 'post',
         url: ip_compu,
         data: {
