@@ -31,7 +31,7 @@ export default async function sendEsp(req, res) {
   const { myTokenName } = req.cookies;
   let proyects;
   if (!myTokenName) {
-    proyects = "dana"
+    proyects = "accesa"
   } else {
     const { proyect } = jwt.verify(myTokenName, "secret");
     proyects = proyect
@@ -63,7 +63,7 @@ export default async function sendEsp(req, res) {
   for (let index = 0; index < result.length; index++) {
     // const element = array[index];
     ip_compu = result[index].ipEsp
-    console.log(ip_compu)
+    // console.log(ip_compu)
     ip_compu = "http://" + ip_compu
 
     if (body.percentage == "000" && body.rgb != "xxx") {
@@ -80,7 +80,10 @@ export default async function sendEsp(req, res) {
     if (!body.tipo) {
       body.tipo = "light"
     }
+    
     try {
+      console.log(ip_compu);
+      // console.log(body.tiempo.toString());
       axios({
         method: 'post',
         url: ip_compu,
@@ -95,6 +98,7 @@ export default async function sendEsp(req, res) {
         }
       });
     } catch (error) {
+      console.log(error);
       console.log("DATO NO SE PUDO ENVIAR AL ESP32");
     }
   }
