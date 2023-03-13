@@ -31,7 +31,7 @@ export default async function sendEsp(req, res) {
   const { myTokenName } = req.cookies;
   let proyects;
   if (!myTokenName) {
-    proyects = "accesa"
+    proyects = "dana"
   } else {
     const { proyect } = jwt.verify(myTokenName, "secret");
     proyects = proyect
