@@ -47,8 +47,8 @@ export default async function sendEsp(req, res) {
   if (!body) {
     res.status(200).json({ body: null })
   }
-  if (body.can == undefined  || body.can == ""){
-    res.status(404).json({ body: null })    
+  if (body.can == undefined || body.can == "") {
+    res.status(404).json({ body: null })
   }
   //
   if (body.rgb != "xxx") {
@@ -77,15 +77,17 @@ export default async function sendEsp(req, res) {
   if (!body.tipo) {
     body.tipo = "light"
 
-    //--------------------------------------------------
+  }
+
+  //--------------------------------------------------
   for (let index = 0; index < result.length; index++) {
     // const element = array[index];
     ip_compu = result[index].ipEsp
     // console.log(ip_compu)
     ip_compu = "http://" + ip_compu
 
-    }
-    
+    // }
+
     try {
       console.log(ip_compu);
       // console.log(body.tiempo.toString());
@@ -106,8 +108,8 @@ export default async function sendEsp(req, res) {
       console.log(error);
       console.log("DATO NO SE PUDO ENVIAR AL ESP32");
     }
-  }
 
+  }
 
   res.status(200).json({ name: result })
 }
