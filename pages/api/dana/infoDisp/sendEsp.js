@@ -47,6 +47,9 @@ export default async function sendEsp(req, res) {
   if (!body) {
     res.status(200).json({ body: null })
   }
+  if (body.can == undefined  || body.can == ""){
+    res.status(404).json({ body: null })    
+  }
   //
   if (body.rgb != "xxx") {
     // UpdateReg(body, "DISPOSITIVOS")
