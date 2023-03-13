@@ -74,7 +74,7 @@ export default async function sendEsp(req, res) {
   if (!body.tiempo) {
     body.tiempo = "00"
   }
-  if (!body.tipo) {
+  if (!body.tipo || body.tipo=="dim") {
     body.tipo = "light"
 
   }
