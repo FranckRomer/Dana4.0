@@ -60,25 +60,27 @@ export default async function sendEsp(req, res) {
   console.log(result)
   let ip_compu = ""
   // -------------------------------------------------------
+  if (body.percentage == "000" && body.rgb != "xxx") {
+    body.percentage = "100"
+    body.rgb = "000"
+  }
+  // Send a POST request
+  if (!body.inst) {
+    body.inst = "FF1"
+  }
+  if (!body.tiempo) {
+    body.tiempo = "00"
+  }
+  if (!body.tipo) {
+    body.tipo = "light"
+
+    //--------------------------------------------------
   for (let index = 0; index < result.length; index++) {
     // const element = array[index];
     ip_compu = result[index].ipEsp
     // console.log(ip_compu)
     ip_compu = "http://" + ip_compu
 
-    if (body.percentage == "000" && body.rgb != "xxx") {
-      body.percentage = "100"
-      body.rgb = "000"
-    }
-    // Send a POST request
-    if (!body.inst) {
-      body.inst = "FF1"
-    }
-    if (!body.tiempo) {
-      body.tiempo = "00"
-    }
-    if (!body.tipo) {
-      body.tipo = "light"
     }
     
     try {

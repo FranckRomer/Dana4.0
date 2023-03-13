@@ -2,7 +2,7 @@
 import { UpgrateData, horaActual, FindData } from "../../../../funcionesCrud"
 import { io } from "socket.io-client";
 
-const socket = io("ws://192.168.1.73:3000");
+const socket = io("ws://192.168.1.70:4000");
 
 export default async function insetData(req, res) {
     let body = req.body
