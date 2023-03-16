@@ -15,7 +15,7 @@ const Zonas = () => {
   const obtenerDatos = async () => {
     try {
       const data = await axios.put('/api/dana/infoDisp/findZona')
-      // console.log(data.data);
+      console.log(data.data);
       setZonas(data.data)
     } catch (error) {
       console.log("NO FUNCIONO");
@@ -44,10 +44,10 @@ const Zonas = () => {
 
           {
             zonas.map((item, index) => (
-              <div>
+              <div key={index}>
                 <Link href={"./Zonas/ZonaMapa/" + item.zona} className={styles.Link}>
                   <div  className={styles.zonasContain}>
-                    <Image src={"/uploads/zonas/" + item.zona + ".jpg"} width="120px" height="80px" />
+                    <Image src={"/uploads/zonas/" + item.zona.toLowerCase() + ".jpg"} width="120px" height="80px" />
                     <br/>
                     <label>{item.zona}</label>
                     
